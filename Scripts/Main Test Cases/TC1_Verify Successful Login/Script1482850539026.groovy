@@ -18,7 +18,7 @@ import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
-import com.kms.katalon.core.util.KeywordUtil
+import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
 
 WebUI.comment('Story: Login to CURA system')
 
@@ -26,12 +26,13 @@ WebUI.comment('Given that the user has the valid login information')
 
 WebUI.openBrowser(GlobalVariable.G_SiteURL)
 
-WebUI.maximizeWindow();
+WebUI.setViewPortSize(1920, 1080)
 
-def viewportWidth = WebUI.executeJavaScript("return window.innerWidth;", null)
-def viewportHeight = WebUI.executeJavaScript("return window.innerHeight;", null)
+def viewportWidth = WebUI.executeJavaScript('return window.innerWidth;', null)
 
-KeywordUtil.logInfo("Viewport Size After Maximize: ${viewportWidth} x ${viewportHeight}")
+def viewportHeight = WebUI.executeJavaScript('return window.innerHeight;', null)
+
+KeywordUtil.logInfo("Viewport Size After Maximize: $viewportWidth x $viewportHeight")
 
 WebUI.click(findTestObject('Page_CuraHomepage/btn_MakeAppointment'))
 
