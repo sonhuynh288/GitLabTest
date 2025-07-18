@@ -26,6 +26,8 @@ WebUI.comment('Given that the user has the valid login information')
 
 WebUI.openBrowser(GlobalVariable.G_SiteURL)
 
+WebUI.maximizeWindow();
+
 def viewportWidth = WebUI.executeJavaScript("return window.innerWidth;", null)
 def viewportHeight = WebUI.executeJavaScript("return window.innerHeight;", null)
 
