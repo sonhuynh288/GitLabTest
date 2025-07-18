@@ -13,6 +13,6 @@ jobs:
     - name: Katalon Studio Github Action
       uses: katalon-studio/katalon-studio-github-action@v2.1
       with:
-          version: '9.7.5'
+          version: '10.2.4'
           projectPath: '${{ github.workspace }}'
           args: '-noSplash -retry=0 -browserType=Chrome -statusDelay=15 -testSuitePath="Test Suites/TS_RegressionTest" -apiKey= ${{ secrets.API_KEY }} -orgID=743630 --config -webui.autoUpdateDrivers=true'
